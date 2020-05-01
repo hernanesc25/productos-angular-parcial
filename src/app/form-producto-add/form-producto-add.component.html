@@ -1,0 +1,40 @@
+<div class="container">
+  <h4>Nuevo Producto</h4>
+</div>
+<div class="container">
+    <form (ngSubmit)="newProducto()" [formGroup]="productoForm">
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input class="form-control" type="text" name="descripcion" formControlName="descripcion"/>
+        <div class="alert-danger" *ngIf="productoForm.controls.descripcion.invalid">
+          <div class="container-error-message"*ngIf="productoForm.controls.descripcion.errors.required">Descripcion es requerido</div>
+        </div>
+      </div>
+      <div class="form-group">
+      <label for="tipo">Tipo</label>
+      <select class="form-control" formControlName="tipo" required>
+          <option value="Liquido">Liquido</option>
+          <option value="Solido">Solido</option>
+      </select>
+      <div class="alert-danger" *ngIf="productoForm.controls.tipo.invalid">
+        <div class="container-error-message"*ngIf="productoForm.controls.tipo.errors.required">Tipo es requerido</div>
+      </div>
+      </div>
+      <div class="form-group">
+      <label for="fechaDeVencimiento">Fecha de Vencimiento</label>
+      <input class="form-control"  formControlName="fechaDeVencimiento" type="date" name="fechaDeVencimiento">
+      <div class="alert-danger" *ngIf="productoForm.controls.fechaDeVencimiento.invalid">
+        <div class="container-error-message"*ngIf="productoForm.controls.fechaDeVencimiento.errors.required">Fecha es requerido</div>
+      </div>
+      </div>
+      <div class="form-group">
+      <label for="precio">Precio</label>
+      <input class="form-control" formControlName="precio" type="number" name="precio" min="0" max="100">
+      <div class="alert-danger" *ngIf="productoForm.controls.precio.invalid">
+        <div class="container-error-message"*ngIf="productoForm.controls.precio.errors.required">Precio es requerido</div>
+      </div>
+      </div>
+      <input type="submit" value="Agregar">
+
+    </form>
+</div>

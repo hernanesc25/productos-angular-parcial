@@ -1,0 +1,23 @@
+<div class="container">
+  <h4>Listado de Ventas</h4>
+</div>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <th>Producto</th>
+      <th>Tipo</th>
+      <th>Fecha de venta</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of ventas">
+        <td>{{venta.data.descripcion}}</td>
+        <td>{{venta.data.tipo}}</td> 
+        <td>{{venta.data.fechaDeVenta | date:'short'}}</td> 
+        <td>{{venta.data.cantidad}}</td> 
+        <td>${{venta.data.precio}}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>

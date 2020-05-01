@@ -1,0 +1,11 @@
+<app-search-producto (productosEncontrados)="showProductos($event)"></app-search-producto>
+<div class ="container">
+  <div class="row">
+    <div class="card col-lg-4 col-md-6 col-sm-1" *ngFor="let producto of productosFiltrados">
+        <img class="card-img-top" [src]="producto.data.rutaFoto">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.data.descripcion}}</h5>
+          </div>
+    </div>
+  </div>
+</div>

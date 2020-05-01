@@ -1,0 +1,28 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <h4>Listado de Productos</h4>
+</div>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <th>Descripcion</th>
+      <th>Tipo</th>
+      <th>Fecha de Vencimiento</th>
+      <th>Precio</th>
+      <th>Foto</th>
+      <th>Eliminar</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.data.descripcion}}</td> 
+        <td>{{producto.data.tipo}}</td> 
+        <td>{{producto.data.fechaDeVencimiento}}</td> 
+        <td>${{producto.data.precio}}</td> 
+        <td><img [src]="producto.data.rutaFoto"/></td> 
+        <td>
+          <app-button-delete-producto [id]="producto.id"></app-button-delete-producto>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
